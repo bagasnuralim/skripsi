@@ -44,10 +44,10 @@ for($i=2; $i<=$jumlah_baris; $i++){
 }
 unlink($_FILES['data_karyawan']['name']);
 if($success >0){
-    echo "berhasil gas";
-    //header("location:index.php?upload=succes");
+    //echo "berhasil";
+    header("location: index.php?menu=data_transaksi&upload=succes");
 }else{
-    echo "gagal gas";
-    //header("location:index.php?upload=gagal");
+    //echo "gagal";
+    header("location: index.php?menu=data_transaksi&upload=gagal");
 }
 ?>

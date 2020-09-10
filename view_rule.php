@@ -266,8 +266,8 @@ $row_log = $db_object->db_fetch_array($res_log);
                 foreach($data_confidence as $key => $val){
                     if($val['lolos']==1){
                         echo "<tr>";
-                        echo "<td>".$no.". Jika konsumen membeli ".$val['kombinasi1']
-                                .", maka konsumen juga akan membeli ".$val['kombinasi2']."</td>";
+                        echo "<td>".$no.". Jika pemustaka meminjam buku golongan ".$val['kombinasi1']
+                                .", maka pemustaka juga akan meminjam buku golongan ".$val['kombinasi2']."</td>";
                         echo "</tr>";
                     }
                     $no++;

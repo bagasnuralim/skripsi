@@ -281,7 +281,7 @@ else {
                         <tr>
                             <th>No</th>
                             <th>Tanggal</th>
-                            <th>Produk</th>
+                            <th>Golongan</th>
                         </tr>
                         <?php
                         $no = 1;

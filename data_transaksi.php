@@ -5,6 +5,30 @@ if (!isset($_SESSION['apriori_toko_id'])) {
 }
 
 ?>
+<script>
+    
+    function validasiFile(){
+    var inputFile = document.getElementById('file');
+    var pathFile = inputFile.value;
+    var ekstensiOk = /(\.xls)$/i;
+    if(!ekstensiOk.exec(pathFile)){
+        alert('Silakan upload file yang memiliki ekstensi .xls');
+        inputFile.value = '';
+        return false;
+    }else{
+        document.getElementById('pesan').innerHTML = '<br><div class="alert alert-success" role="alert">Extensi file telah sesuai !</div>';
+        //Pratinjau gambar
+        // if (inputFile.files && inputFile.files[0]) {
+        //     var reader = new FileReader();
+        //     reader.onload = function(e) {
+        //         document.getElementById('pratinjauGambar').innerHTML = '<img src="'+e.target.result+'"/>';
+        //     };
+        //     reader.readAsDataURL(inputFile.files[0]);
+        // }
+        //reset tabel gas ALTER TABLE nama_tabel AUTO_INCREMENT = 1;
+    }
+}
+</script>
 <section class="page_head">
     <div class="container">
         <div class="row">
@@ -21,16 +45,27 @@ if (!isset($_SESSION['apriori_toko_id'])) {
     <div class="container">
         <div class="row">
             <form method="post" enctype="multipart/form-data" action="uploader.php">
-                <b>import data</b>
-                <input type="file" name="data_karyawan" require="required">
+                <label for="">Import data disini.</label> <div class="alert alert-warning" role="alert">Format nama file harus sesuai dengan : <b>data_peminjaman.xls</b></div>
+                <input type="file" name="data_karyawan" id="file" onchange="return validasiFile()" require="required">
+                <div id="pesan">
+                </div>
                 <input type="submit" name="upload" value="Upload">
             </form>
+            <br>
             <?php 
                 if(isset($_GET['upload'])){
                     if($_GET['upload']=="succes"){
-                        echo "<h3>berhasil</h3>";
+                        echo "
+                        <div class='alert alert-success' role='alert'>
+                            Yeay ! <b>Data berhasil</b> disimpan ... 
+                        </div>
+                        ";
                     }else{
-                        echo "<h3>gagal</h3>";
+                        echo "
+                        <div class='alert alert-danger' role='alert'>
+                            Format nama file anda <b>tidak sesuai</b> dengan : <b>data_peminjaman.xls</b>
+                        </div>
+                        ";
                     }
                 }
             ?>
@@ -43,7 +78,7 @@ if (!isset($_SESSION['apriori_toko_id'])) {
             <?php 
                 include_once('kondb.php');
                 $no =1;
-                $peminjaman = mysqli_query($connect, "SELECT * FROM transaksi");
+                $peminjaman = mysqli_query($connect, "SELECT * FROM transaksi ");
                 while($data = mysqli_fetch_assoc($peminjaman)){
             ?>
             <tr>

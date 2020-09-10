@@ -9,7 +9,7 @@ if(isset($_GET['menu'])){
 <header class="site-header container-fluid">
             <div class="top-header">
                 <div class="col-md-3 col-sm-3">
-                    <h1><a href="index.php"><img alt="Brand" src="images/icon.png" width="300" height="120"></h1>
+                    <h1><a href="index.php"><img alt="Brand" src="images/icon.png" width="200" height="70"></h1>
                 </div>
                 <br>
                 <div class="logo col-md-9 col-sm-12">
@@ -37,6 +37,7 @@ if(isset($_GET['menu'])){
                     <div class="menu-wrapper col-md-9 col-sm-6 col-xs-4">
                         <a href="#" class="toggle-menu visible-sm visible-xs"><i class="fa fa-bars"></i></a>
                         <ul class="sf-menu hidden-xs hidden-sm">
+
                             <li <?php echo ($menu==''||$menu=='home')?"class='active'":""; ?> ><a href="index.php">Home</a></li>
                         <?php
                         if (empty($_SESSION['apriori_toko_id'])) {
@@ -52,7 +53,7 @@ if(isset($_GET['menu'])){
                             <?php
                             }
                             ?>
-                            <li <?php echo ($menu=='hasil_rule')?"class='active'":""; ?>><a href="index.php?menu=hasil_rule">Hasil Rule</a></li>
+                            <!-- <li <?php //echo ($menu=='hasil_rule')?"class='active'":""; ?>><a href="index.php?menu=hasil_rule">Hasil Rule</a></li> -->
                             <li ><a href="logout.php">Logout</a></li>
                         <?php
                         }
@@ -61,6 +62,7 @@ if(isset($_GET['menu'])){
                     </div> <!-- /.menu-wrapper -->
                 </div> <!-- /.row -->
             </div> <!-- /.main-header -->
+            
             <div id="responsive-menu">
                 <ul>
                     <li class="active"><a href="index.php">Home</a></li>
@@ -74,7 +76,7 @@ if(isset($_GET['menu'])){
                     ?>
                         <li <?php echo ($menu=='data_transaksi')?"class='active'":""; ?>><a href="index.php?menu=data_transaksi">Data Transaksi</a></li>
                         <li <?php echo ($menu=='proses_apriori')?"class='active'":""; ?>><a href="index.php?menu=proses_apriori">Proses Apriori</a></li>
-                        <li <?php echo ($menu=='hasil_rule')?"class='active'":""; ?>><a href="index.php?menu=hasil_rule">Hasil Rule</a></li>
+                        <!-- <li <?php //echo ($menu=='hasil_rule')?"class='active'":""; ?>><a href="index.php?menu=hasil_rule">Hasil Rule</a></li> -->
                         <li><a href="logout.php">Logout</a></li>
                     <?php
                     }

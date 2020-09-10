@@ -62,7 +62,7 @@ include_once "fungsi.php";
             <div class="inner-container container">
                 <div class="row">
                     <div class="section-header col-md-12">
-                        <h2>Login Page</h2>
+                        <h2>Silahkan Masuk</h2>
                         <!-- <span>Subtitle Goes Here</span> -->
                     </div> <!-- /.section-header -->
                 </div> <!-- /.row -->
@@ -85,7 +85,7 @@ include_once "fungsi.php";
                                         </p>
                                         <p>
                                             <label for="password">Password:</label>
-                                            <input name="password" type="password" id="password">   
+                                            <input name="password" type="text" id="password">   
                                         </p>
                                         
                                         <input type="submit" class="mainBtn" id="submit" value="Login" />
